@@ -1,4 +1,4 @@
-const createUser = require("./info");
+const createUser = require("./info.js");
 import { users, protoUser } from "./users.js";
 document.getElementById("button").addEventListener("click", (e) => {
   e.preventDefault();
