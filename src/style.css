@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: bisque;
+    margin: 0 auto;
+}
+input {
+    background-color: blanchedalmond;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid burlywood;
+    padding: 8px;
+}
+button{
+    background-color: burlywood;
+    border: 1px solid beige;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+p {
+    text-align: center;
+    color: lightgray;
+}
