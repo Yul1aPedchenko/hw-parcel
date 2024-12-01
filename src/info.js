@@ -1,4 +1,9 @@
-import { users, protoUser } from "./users.js";
+const users = [];
+const protoUser = {
+  name: "Your name",
+  email: "your email",
+  text: "text message",
+};
 export function userObj(name, email, text) {
   const newUser = Object.create(protoUser);
   newUser.name = name;
@@ -7,4 +12,4 @@ export function userObj(name, email, text) {
   return users.push(newUser);
 }
 
-module.exports = userObj;
+export { users, protoUser };

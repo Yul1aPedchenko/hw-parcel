@@ -1,5 +1,5 @@
-const createUser = require("./info.js");
-import { users, protoUser } from "./users.js";
+import { users, protoUser } from "./info.js";
+import { userObj } from "./info.js";
 document.getElementById("button").addEventListener("click", (e) => {
   e.preventDefault();
   const name = document.querySelector("#inputName").value;
@@ -7,7 +7,7 @@ document.getElementById("button").addEventListener("click", (e) => {
   const text = document.querySelector("#inputText").value;
   if (name !== "" && email !== "") {
     if (email.includes("@gmail.com")) {
-      createUser(name, email, text);
+      userObj(name, email, text);
       alert(`Hi, ${name}. Your registration are succesful!`);
       console.log(users);
     } else {

@@ -596,8 +596,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"8lqZg":[function(require,module,exports,__globalThis) {
-var _usersJs = require("./users.js");
-const createUser = require("31f48ec80355ad45");
+var _infoJs = require("./info.js");
 document.getElementById("button").addEventListener("click", (e)=>{
     e.preventDefault();
     const name = document.querySelector("#inputName").value;
@@ -605,16 +604,17 @@ document.getElementById("button").addEventListener("click", (e)=>{
     const text = document.querySelector("#inputText").value;
     if (name !== "" && email !== "") {
         if (email.includes("@gmail.com")) {
-            createUser(name, email, text);
+            (0, _infoJs.userObj)(name, email, text);
             alert(`Hi, ${name}. Your registration are succesful!`);
-            console.log((0, _usersJs.users));
+            console.log((0, _infoJs.users));
         } else alert("check if you have spelt your email correctly");
     } else alert("Please, fill in all the fields of the form (message is optional)");
 });
 
-},{"./users.js":"ieknz","31f48ec80355ad45":"4o4fe"}],"ieknz":[function(require,module,exports,__globalThis) {
+},{"./info.js":"4o4fe"}],"4o4fe":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "userObj", ()=>userObj);
 parcelHelpers.export(exports, "users", ()=>users);
 parcelHelpers.export(exports, "protoUser", ()=>protoUser);
 const users = [];
@@ -623,6 +623,13 @@ const protoUser = {
     email: "your email",
     text: "text message"
 };
+function userObj(name, email, text) {
+    const newUser = Object.create(protoUser);
+    newUser.name = name;
+    newUser.email = email;
+    newUser.text = text;
+    return users.push(newUser);
+}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
 exports.interopDefault = function(a) {
@@ -654,20 +661,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"4o4fe":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "userObj", ()=>userObj);
-var _usersJs = require("./users.js");
-function userObj(name, email, text) {
-    const newUser = Object.create((0, _usersJs.protoUser));
-    newUser.name = name;
-    newUser.email = email;
-    newUser.text = text;
-    return (0, _usersJs.users).push(newUser);
-}
-module.exports = userObj;
-
-},{"./users.js":"ieknz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9mu7C","8lqZg"], "8lqZg", "parcelRequire94c2")
+},{}]},["9mu7C","8lqZg"], "8lqZg", "parcelRequire94c2")
 
 //# sourceMappingURL=index.975ef6c8.js.map
