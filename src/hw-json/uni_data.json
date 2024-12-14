@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "faculty": "Engineering",
+    "courses": ["Programming", "Mathematics", "Physics"]
+  },
+  {
+    "id": 2,
+    "faculty": "Business",
+    "courses": ["Marketing", "Finance", "Economics"]
+  },
+  {
+    "id": 3,
+    "faculty": "Computer Science",
+    "courses": ["Algorithms", "Data Structures", "Operating Systems"]
+  },
+  {
+    "id": 4,
+    "faculty": "Medicine",
+    "courses": ["Anatomy", "Biochemistry", "Pharmacology"]
+  },
+  {
+    "id": 5,
+    "faculty": "Law",
+    "courses": ["Civil Law", "Criminal Law", "Legal Ethics"]
+  },
+  {
+    "id": 6,
+    "faculty": "Architecture",
+    "courses": [
+      "Urban Design",
+      "Building Materials",
+      "Sustainable Architecture"
+    ]
+  },
+  {
+    "id": 7,
+    "faculty": "Arts",
+    "courses": ["Painting", "Sculpture", "Art History"]
+  },
+  {
+    "id": 8,
+    "faculty": "Psychology",
+    "courses": [
+      "Cognitive Psychology",
+      "Behavioral Psychology",
+      "Research Methods"
+    ]
+  },
+  {
+    "id": 9,
+    "faculty": "Environmental Science",
+    "courses": ["Ecology", "Climate Change", "Environmental Policy"]
+  }
+]

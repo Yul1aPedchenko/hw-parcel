@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <form>
-        <input type="text" placeholder="write name" id="name-int">
-    </form>
-    <div id="app"></div>
-    <script src="js/index.js"></script>
-</body>
+    <link rel="stylesheet" href="./hw-json/style.css" />
+  </head>
+  <body>
+    <div class="form-warp">
+      <h2 class="form-text">Do you want to add student?</h2>
+      <form class="form">
+        <input type="text" placeholder="First name" id="firstName" required/>
+        <input type="text" placeholder="Last name" id="lastName" required/>
+        <input type="number" placeholder="Age" id="age" required/>
+        <input type="number" placeholder="number of course" id="courseNumber" required/>
+        <select name="faculties" id="faculties"></select>
+        <div id="course-list"></div>
+        <button id="addStudent">Add student</button>
+      </form>
+    </div>
+    <div class="students-list">
+    </div>
+    <script type="module" src="./hw-json/js/index.js"></script>
+  </body>
 </html>

@@ -22,6 +22,5 @@
       "@parcel/transformer-handlebars"
     ]
   },
-  "main": "index.js",
   "description": ""
 }

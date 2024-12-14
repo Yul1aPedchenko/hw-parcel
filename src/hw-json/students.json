@@ -1,0 +1,58 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "age": 20,
+    "courseNumber": 3,
+    "faculty": "Engineering",
+    "courses": ["Programming", "Mathematics", "Physics"]
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "age": 22,
+    "courseNumber": 4,
+    "faculty": "Business",
+    "courses": ["Marketing", "Finance", "Economics"]
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Brown",
+    "age": 19,
+    "courseNumber": 2,
+    "faculty": "Computer Science",
+    "courses": ["Algorithms", "Data Structures", "Operating Systems"]
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Johnson",
+    "age": 21,
+    "courseNumber": 3,
+    "faculty": "Medicine",
+    "courses": ["Anatomy", "Biochemistry", "Pharmacology"]
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "age": 20,
+    "courseNumber": 2,
+    "faculty": "Law",
+    "courses": ["Civil Law", "Criminal Law", "Legal Ethics"]
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Wilson",
+    "age": 23,
+    "courseNumber": 5,
+    "faculty": "Architecture",
+    "courses": ["Urban Design", "Building Materials", "Sustainable Architecture"]
+  },
+  {
+    "firstName": "Sophia",
+    "lastName": "Taylor",
+    "age": 18,
+    "courseNumber": 1,
+    "faculty": "Arts",
+    "courses": ["Painting", "Sculpture", "Art History"]
+  }
+]
