@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "firstName": "John",
     "lastName": "Doe",
     "age": 20,
@@ -8,6 +9,7 @@
     "courses": ["Programming", "Mathematics", "Physics"]
   },
   {
+    "id": 2,
     "firstName": "Jane",
     "lastName": "Smith",
     "age": 22,
@@ -16,6 +18,7 @@
     "courses": ["Marketing", "Finance", "Economics"]
   },
   {
+    "id": 3,
     "firstName": "Alice",
     "lastName": "Brown",
     "age": 19,
@@ -24,6 +27,7 @@
     "courses": ["Algorithms", "Data Structures", "Operating Systems"]
   },
   {
+    "id": 4,
     "firstName": "Bob",
     "lastName": "Johnson",
     "age": 21,
@@ -32,6 +36,7 @@
     "courses": ["Anatomy", "Biochemistry", "Pharmacology"]
   },
   {
+    "id": 5,
     "firstName": "Emily",
     "lastName": "Davis",
     "age": 20,
@@ -40,14 +45,20 @@
     "courses": ["Civil Law", "Criminal Law", "Legal Ethics"]
   },
   {
+    "id": 6,
     "firstName": "Michael",
     "lastName": "Wilson",
     "age": 23,
     "courseNumber": 5,
     "faculty": "Architecture",
-    "courses": ["Urban Design", "Building Materials", "Sustainable Architecture"]
+    "courses": [
+      "Urban Design",
+      "Building Materials",
+      "Sustainable Architecture"
+    ]
   },
   {
+    "id": 7,
     "firstName": "Sophia",
     "lastName": "Taylor",
     "age": 18,

@@ -76,6 +76,16 @@ table {
   background-color: aliceblue;
   padding: 10px 20px;
   border: 1px solid darkcyan;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.student:hover .mini-modal {
+  opacity: 1;
+}
+.mini-modal {
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .student-wrap {
   display: flex;
