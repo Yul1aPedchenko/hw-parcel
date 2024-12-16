@@ -1,6 +1,6 @@
 import univerData from '../uni_data.json';
 
-function createFaculties(faculties) {
+export function createFaculties(faculties) {
   return faculties
     .map(
       (faculty) => `<option value="${faculty.id}">${faculty.faculty}</option>`
