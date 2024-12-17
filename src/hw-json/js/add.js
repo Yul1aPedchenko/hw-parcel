@@ -1,5 +1,5 @@
-import students from "../students.json" assert { type: "json" };
-import univerData from "../uni_data.json" assert { type: "json" };
+import students from "../students.json";
+import univerData from "../uni_data.json";
 import * as main from './index.js';
 import * as load from "./load.js";
 

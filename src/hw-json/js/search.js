@@ -1,4 +1,4 @@
-import students from "../students.json" assert { type: "json" };
+import students from "../students.json";
 import * as main from "./index.js";
 const filtereData = (query) => {
   const filteredUsers = students.filter((student) =>

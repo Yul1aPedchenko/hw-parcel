@@ -1,5 +1,4 @@
-import univerData from "../uni_data.json" assert { type: "json" };
-import students from "../students.json" assert { type: "json" };
+import univerData from "../uni_data.json";
 export function createFaculties(faculties) {
   return faculties
     .map(
