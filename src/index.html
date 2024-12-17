@@ -7,40 +7,65 @@
     <link rel="stylesheet" href="./hw-json/style.css" />
   </head>
   <body>
-    <div class="backdrop is-hidden" header-modal>
-      <div class="modal">
-        <h2 class="changed-form-text">Do you want to change anything?</h2>
-        <form class="changed-form">
-          <input type="text" placeholder="First name" id="changedFirstName" />
-          <input type="text" placeholder="Last name" id="changedLastName" />
-          <input type="number" placeholder="Age" id="changedAge" />
+    <div class="container">
+      <div class="backdrop is-hidden" header-modal>
+        <div class="modal">
+          <h2 class="changed-form-text">Do you want to change anything?</h2>
+          <form class="changed-form">
+            <input type="text" placeholder="First name" id="changedFirstName" />
+            <input type="text" placeholder="Last name" id="changedLastName" />
+            <input type="number" placeholder="Age" id="changedAge" />
+            <input
+              type="number"
+              placeholder="number of course"
+              id="changedCourseNumber"
+            />
+            <select name="faculties" id="changedFaculties"></select>
+            <div id="changedCourseList"></div>
+            <button id="changeInfoBtn">Change</button>
+          </form>
+        </div>
+      </div>
+      <div class="form-warp">
+        <h2 class="form-text">Do you want to add student?</h2>
+        <form class="form">
+          <input type="text" placeholder="First name" id="firstName" required class="form-input"/>
+          <input type="text" placeholder="Last name" id="lastName" required class="form-input"/>
+          <input type="number" placeholder="Age" id="age" required class="form-input"/>
           <input
             type="number"
-            placeholder="number of course"
-            id="changedCourseNumber"
-          />
-          <button id="changeInfoBtn">Change</button>
+            placeholder="Number of course"
+            id="courseNumber"
+            required
+          class="form-input"/>
+          <select name="faculties" id="faculties"></select>
+          <div id="courseList"></div>
+          <button id="addStudent">Add student</button>
         </form>
       </div>
+      <div class="search-wrap">
+        <input type="text" id="search" placeholder="Last Name"/>
+        <ul class="search-list">
+          <li class="search-item">
+            <button class="search-btn" data-course="1">1</button>
+          </li>
+          <li class="search-item">
+            <button class="search-btn" data-course="2">2</button>
+          </li>
+          <li class="search-item">
+            <button class="search-btn" data-course="3">3</button>
+          </li>
+          <li class="search-item">
+            <button class="search-btn" data-course="4">4</button>
+          </li>
+          <li class="search-item">
+            <button class="search-btn" data-course="5">5</button>
+          </li>
+        </ul>
+        <button class="reset-btn">Reset</button>
+      </div>
+      <div class="students-list"></div>
     </div>
-    <div class="form-warp">
-      <h2 class="form-text">Do you want to add student?</h2>
-      <form class="form">
-        <input type="text" placeholder="First name" id="firstName" required />
-        <input type="text" placeholder="Last name" id="lastName" required />
-        <input type="number" placeholder="Age" id="age" required />
-        <input
-          type="number"
-          placeholder="number of course"
-          id="courseNumber"
-          required
-        />
-        <select name="faculties" id="faculties"></select>
-        <div id="course-list"></div>
-        <button id="addStudent">Add student</button>
-      </form>
-    </div>
-    <div class="students-list"></div>
     <script type="module" src="./hw-json/js/index.js"></script>
   </body>
 </html>
