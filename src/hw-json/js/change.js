@@ -81,7 +81,6 @@ function toggleModal() {
 backdrop.addEventListener("click", (event) => {
   if (event.target === backdrop) {
     toggleModal();
-    document.getElementById("changeInfoBtn").removeEventListener("click", newHandler)
   }
 });
 addChangeEventListeners();
