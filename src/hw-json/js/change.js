@@ -74,10 +74,15 @@ function changeStudent(studentId) {
 }
 
 const modal = document.querySelector("[header-modal]");
+const backdrop = document.querySelector('.backdrop');
 function toggleModal() {
   modal.classList.toggle("is-hidden");
 }
-
+backdrop.addEventListener("click", (event) => {
+  if (event.target === backdrop) {
+    toggleModal();
+  }
+});
 addChangeEventListeners();
 
 function createInfoForChangedForm(curStudentId) {

@@ -638,8 +638,11 @@ document.querySelector(".students-list").innerHTML = renderStudents((0, _student
 _changeJs.addChangeEventListeners();
 _deleteJs.addDeleteEventListeners();
 
-},{"../students.json":"6W3sm","./load.js":"kMT9h","./change.js":"b2p6p","./search.js":"jevGD","./add.js":"2LogV","./delete.js":"8V7AH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../uni_data.json":"4G3hd"}],"6W3sm":[function(require,module,exports,__globalThis) {
+},{"../students.json":"6W3sm","../uni_data.json":"4G3hd","./load.js":"kMT9h","./change.js":"b2p6p","./search.js":"jevGD","./add.js":"2LogV","./delete.js":"8V7AH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6W3sm":[function(require,module,exports,__globalThis) {
 module.exports = JSON.parse("[{\"id\":1,\"firstName\":\"John\",\"lastName\":\"Doe\",\"age\":20,\"courseNumber\":3,\"faculty\":\"Engineering\",\"courses\":[\"Programming\",\"Mathematics\",\"Physics\"]},{\"id\":2,\"firstName\":\"Jane\",\"lastName\":\"Smith\",\"age\":22,\"courseNumber\":4,\"faculty\":\"Business\",\"courses\":[\"Marketing\",\"Finance\",\"Economics\"]},{\"id\":3,\"firstName\":\"Alice\",\"lastName\":\"Brown\",\"age\":19,\"courseNumber\":2,\"faculty\":\"Computer Science\",\"courses\":[\"Algorithms\",\"Data Structures\",\"Operating Systems\"]},{\"id\":4,\"firstName\":\"Bob\",\"lastName\":\"Johnson\",\"age\":21,\"courseNumber\":3,\"faculty\":\"Medicine\",\"courses\":[\"Anatomy\",\"Biochemistry\",\"Pharmacology\"]},{\"id\":5,\"firstName\":\"Emily\",\"lastName\":\"Davis\",\"age\":20,\"courseNumber\":2,\"faculty\":\"Law\",\"courses\":[\"Civil Law\",\"Criminal Law\",\"Legal Ethics\"]},{\"id\":6,\"firstName\":\"Michael\",\"lastName\":\"Wilson\",\"age\":23,\"courseNumber\":5,\"faculty\":\"Architecture\",\"courses\":[\"Urban Design\",\"Building Materials\",\"Sustainable Architecture\"]},{\"id\":7,\"firstName\":\"Sophia\",\"lastName\":\"Taylor\",\"age\":18,\"courseNumber\":1,\"faculty\":\"Arts\",\"courses\":[\"Painting\",\"Sculpture\",\"Art History\"]}]");
+
+},{}],"4G3hd":[function(require,module,exports,__globalThis) {
+module.exports = JSON.parse("[{\"id\":1,\"faculty\":\"Engineering\",\"courses\":[\"Programming\",\"Mathematics\",\"Physics\"]},{\"id\":2,\"faculty\":\"Business\",\"courses\":[\"Marketing\",\"Finance\",\"Economics\"]},{\"id\":3,\"faculty\":\"Computer Science\",\"courses\":[\"Algorithms\",\"Data Structures\",\"Operating Systems\"]},{\"id\":4,\"faculty\":\"Medicine\",\"courses\":[\"Anatomy\",\"Biochemistry\",\"Pharmacology\"]},{\"id\":5,\"faculty\":\"Law\",\"courses\":[\"Civil Law\",\"Criminal Law\",\"Legal Ethics\"]},{\"id\":6,\"faculty\":\"Architecture\",\"courses\":[\"Urban Design\",\"Building Materials\",\"Sustainable Architecture\"]},{\"id\":7,\"faculty\":\"Arts\",\"courses\":[\"Painting\",\"Sculpture\",\"Art History\"]},{\"id\":8,\"faculty\":\"Psychology\",\"courses\":[\"Cognitive Psychology\",\"Behavioral Psychology\",\"Research Methods\"]},{\"id\":9,\"faculty\":\"Environmental Science\",\"courses\":[\"Ecology\",\"Climate Change\",\"Environmental Policy\"]}]");
 
 },{}],"kMT9h":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -648,8 +651,6 @@ parcelHelpers.export(exports, "createFaculties", ()=>createFaculties);
 parcelHelpers.export(exports, "createCourses", ()=>createCourses);
 var _uniDataJson = require("../uni_data.json");
 var _uniDataJsonDefault = parcelHelpers.interopDefault(_uniDataJson);
-var _studentsJson = require("../students.json");
-var _studentsJsonDefault = parcelHelpers.interopDefault(_studentsJson);
 function createFaculties(faculties) {
     return faculties.map((faculty)=>`<option value="${faculty.id}">${faculty.faculty}</option>`).join("");
 }
@@ -674,10 +675,7 @@ document.querySelector("#faculties").addEventListener("change", (event)=>{
     coursesContainer.innerHTML = createCourses((0, _uniDataJsonDefault.default), facultyId);
 });
 
-},{"../uni_data.json":"4G3hd","../students.json":"6W3sm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4G3hd":[function(require,module,exports,__globalThis) {
-module.exports = JSON.parse("[{\"id\":1,\"faculty\":\"Engineering\",\"courses\":[\"Programming\",\"Mathematics\",\"Physics\"]},{\"id\":2,\"faculty\":\"Business\",\"courses\":[\"Marketing\",\"Finance\",\"Economics\"]},{\"id\":3,\"faculty\":\"Computer Science\",\"courses\":[\"Algorithms\",\"Data Structures\",\"Operating Systems\"]},{\"id\":4,\"faculty\":\"Medicine\",\"courses\":[\"Anatomy\",\"Biochemistry\",\"Pharmacology\"]},{\"id\":5,\"faculty\":\"Law\",\"courses\":[\"Civil Law\",\"Criminal Law\",\"Legal Ethics\"]},{\"id\":6,\"faculty\":\"Architecture\",\"courses\":[\"Urban Design\",\"Building Materials\",\"Sustainable Architecture\"]},{\"id\":7,\"faculty\":\"Arts\",\"courses\":[\"Painting\",\"Sculpture\",\"Art History\"]},{\"id\":8,\"faculty\":\"Psychology\",\"courses\":[\"Cognitive Psychology\",\"Behavioral Psychology\",\"Research Methods\"]},{\"id\":9,\"faculty\":\"Environmental Science\",\"courses\":[\"Ecology\",\"Climate Change\",\"Environmental Policy\"]}]");
-
-},{}],"gkKU3":[function(require,module,exports,__globalThis) {
+},{"../uni_data.json":"4G3hd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -767,9 +765,13 @@ function changeStudent(studentId) {
     _indexJs.updateStudentList();
 }
 const modal = document.querySelector("[header-modal]");
+const backdrop = document.querySelector('.backdrop');
 function toggleModal() {
     modal.classList.toggle("is-hidden");
 }
+backdrop.addEventListener("click", (event)=>{
+    if (event.target === backdrop) toggleModal();
+});
 addChangeEventListeners();
 function createInfoForChangedForm(curStudentId) {
     const curStudent = (0, _studentsJsonDefault.default).find((student)=>student.id === curStudentId);
