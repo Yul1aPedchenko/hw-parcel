@@ -10,32 +10,32 @@ function addNewStudent(
   courseNumber,
   faculty,
   courses,
-  id
 ) {
   const newStudent = {
     firstName,
     lastName,
-    age,
-    courseNumber,
+    age: parseInt(age),
+    courseNumber: parseInt(courseNumber),
     faculty,
     courses,
-    id,
+    id: Date.now(),
   };
 
-  students.push(newStudent);
-  main.updateStudentList();
+  students.push(newStudent); 
+  main.updateStudentList(); 
 }
 document.getElementById("addStudent").addEventListener("click", (event) => {
-  const firstName = document.getElementById("firstName").value;
-  const lastName = document.getElementById("lastName").value;
-  const age = document.getElementById("age").value;
-  const courseNumber = document.getElementById("courseNumber").value;
+  const firstName = document.getElementById("firstName").value.trim();
+  const lastName = document.getElementById("lastName").value.trim();
+  const age = document.getElementById("age").value.trim();
+  const courseNumber = document.getElementById("courseNumber").value.trim();
   const faculty = document.getElementById("faculties").value;
-  const id = students.length;
   const selectedCourses = Array.from(
     document.querySelectorAll("#courseList input:checked")
   ).map((checkbox) => checkbox.value);
-    const curFaculty = univerData.find((data) => data.id == faculty).faculty;
+
+  const curFaculty = univerData.find((data) => data.id == faculty).faculty;
+
   if (
     firstName &&
     lastName &&
@@ -50,7 +50,7 @@ document.getElementById("addStudent").addEventListener("click", (event) => {
       courseNumber,
       curFaculty,
       selectedCourses,
-      id
+      students.length
     );
 
     document.getElementById("firstName").value = "";

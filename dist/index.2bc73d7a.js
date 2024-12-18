@@ -723,12 +723,12 @@ function addChangeEventListeners() {
             toggleModal();
             fullModal(studentId);
             const changeInfoBtn = document.getElementById("changeInfoBtn");
-            const newHandler = (e)=>{
+            const newHandler1 = (e)=>{
                 e.preventDefault();
                 changeStudent(studentId);
-                changeInfoBtn.removeEventListener("click", newHandler);
+                changeInfoBtn.removeEventListener("click", newHandler1);
             };
-            changeInfoBtn.addEventListener("click", newHandler);
+            changeInfoBtn.addEventListener("click", newHandler1);
         });
     });
 }
@@ -770,7 +770,10 @@ function toggleModal() {
     modal.classList.toggle("is-hidden");
 }
 backdrop.addEventListener("click", (event)=>{
-    if (event.target === backdrop) toggleModal();
+    if (event.target === backdrop) {
+        toggleModal();
+        document.getElementById("changeInfoBtn").removeEventListener("click", newHandler);
+    }
 });
 addChangeEventListeners();
 function createInfoForChangedForm(curStudentId) {
@@ -823,30 +826,29 @@ var _uniDataJson = require("../uni_data.json");
 var _uniDataJsonDefault = parcelHelpers.interopDefault(_uniDataJson);
 var _indexJs = require("./index.js");
 var _loadJs = require("./load.js");
-function addNewStudent(firstName, lastName, age, courseNumber, faculty, courses, id) {
+function addNewStudent(firstName, lastName, age, courseNumber, faculty, courses) {
     const newStudent = {
         firstName,
         lastName,
-        age,
-        courseNumber,
+        age: parseInt(age),
+        courseNumber: parseInt(courseNumber),
         faculty,
         courses,
-        id
+        id: Date.now()
     };
     (0, _studentsJsonDefault.default).push(newStudent);
     _indexJs.updateStudentList();
 }
 document.getElementById("addStudent").addEventListener("click", (event)=>{
-    const firstName = document.getElementById("firstName").value;
-    const lastName = document.getElementById("lastName").value;
-    const age = document.getElementById("age").value;
-    const courseNumber = document.getElementById("courseNumber").value;
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const age = document.getElementById("age").value.trim();
+    const courseNumber = document.getElementById("courseNumber").value.trim();
     const faculty = document.getElementById("faculties").value;
-    const id = (0, _studentsJsonDefault.default).length;
     const selectedCourses = Array.from(document.querySelectorAll("#courseList input:checked")).map((checkbox)=>checkbox.value);
     const curFaculty = (0, _uniDataJsonDefault.default).find((data)=>data.id == faculty).faculty;
     if (firstName && lastName && age && courseNumber && selectedCourses.length > 0) {
-        addNewStudent(firstName, lastName, age, courseNumber, curFaculty, selectedCourses, id);
+        addNewStudent(firstName, lastName, age, courseNumber, curFaculty, selectedCourses, (0, _studentsJsonDefault.default).length);
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = "";
         document.getElementById("age").value = "";

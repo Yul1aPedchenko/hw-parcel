@@ -35,6 +35,7 @@ export function renderStudents(students) {
 export function updateStudentList(filteredStudents = students) {
   document.querySelector(".students-list").innerHTML =
     renderStudents(filteredStudents);
+
   deleteStud.addDeleteEventListeners();
   change.addChangeEventListeners();
 }
